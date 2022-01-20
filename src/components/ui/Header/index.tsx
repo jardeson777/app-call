@@ -1,24 +1,37 @@
-import React, { useState } from 'react';
-import { useTheme } from 'styled-components';
+import React from 'react';
 import { Container } from './styles';
 
 import logo from '../../../assets/logo.png';
 import Button from '../../infra/form/Button';
-import ModalNovaSala from '../Modal/ModalNovaSala';
+import Title from '../../infra/typography/Title';
+import theme from '../../../styles/theme';
 
-const Header: React.FC = () => {
-  const { colors } = useTheme();
-  const [isOpenModal, setIsOpenModal] = useState(false);
+interface HeaderProps {
+  textButton: string;
+  clickButton: () => void;
+  textHeader?: string;
+  textHeaderDestaque?: string;
+  colorButton: string;
+}
 
-  const handleModal = () => {
-    setIsOpenModal(!isOpenModal);
-  };
-
+const Header: React.FC<HeaderProps> = ({
+  clickButton,
+  textButton,
+  textHeader,
+  textHeaderDestaque,
+  colorButton
+}) => {
   return (
     <Container>
-      <ModalNovaSala isOpen={isOpenModal} closeModal={handleModal} />
       <img src={logo} alt="logo" />
-      <Button text="Criar Sala" onClick={handleModal} color={colors.primary} />
+      {textHeader && (
+        <Title
+          text={textHeader}
+          textDestaque={textHeaderDestaque}
+          color={theme.colors.white}
+        />
+      )}
+      <Button text={textButton} onClick={clickButton} color={colorButton} />
     </Container>
   );
 };

@@ -13,7 +13,7 @@ const Title: React.FC<TitleProps> = ({ text, color, textDestaque }) => {
   return (
     <Container color={color != null ? color : theme.colors.black}>
       {text}
-      {textDestaque}
+      <span>{textDestaque}</span>
     </Container>
   );
 };
