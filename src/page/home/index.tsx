@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useTheme } from 'styled-components';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Button from '../../components/infra/form/Button';
@@ -7,6 +7,8 @@ import { Input } from '../../components/infra/form/Input';
 import { Col, Container, Content, Row } from './styles';
 import Banner from '../../assets/banner.png';
 import Title from '../../components/infra/typography/Title';
+import ModalNovaSala from '../../components/ui/Modal/ModalNovaSala';
+import theme from '../../styles/theme';
 
 interface FormLoginProps {
   nome: string;
@@ -15,7 +17,7 @@ interface FormLoginProps {
 
 const Home: React.FC = () => {
   const { colors } = useTheme();
-  const videoRef = useRef(null);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const {
     handleSubmit,
@@ -23,25 +25,24 @@ const Home: React.FC = () => {
     formState: { errors }
   } = useForm();
 
+  const handleModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
+
   const onSubmit: SubmitHandler<FormLoginProps> = data => {
-    navigator.mediaDevices
-      .getUserMedia({ audio: true, video: true })
-      .then(function (stream) {
-        if (videoRef.current !== null) {
-          videoRef.current.setAttribute('src', 'www');
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    //
   };
 
   return (
     <Container>
-      <source ref={videoRef} type="video/mp4" />
-
       <Content>
-        <Header />
+        <Header
+          textButton="Criar sala"
+          clickButton={handleModal}
+          colorButton={theme.colors.primary}
+        />
+        <ModalNovaSala isOpen={isOpenModal} closeModal={handleModal} />
+
         <main>
           <Title
             text="Comece sua videoconferência agora mesmo."

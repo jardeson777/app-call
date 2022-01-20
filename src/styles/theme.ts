@@ -5,7 +5,9 @@ const theme = {
     primary: '#7F5AF0',
     secondary: '#72757E',
     white: '#fff',
-    black: '#000'
+    black: '#000',
+    green: '#2CB67D',
+    danger: '#B62C2C'
   }
 };
 
