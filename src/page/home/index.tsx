@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useTheme } from 'styled-components';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/infra/form/Button';
 import Header from '../../components/ui/Header';
 import { Input } from '../../components/infra/form/Input';
@@ -9,15 +10,20 @@ import Banner from '../../assets/banner.png';
 import Title from '../../components/infra/typography/Title';
 import ModalNovaSala from '../../components/ui/Modal/ModalNovaSala';
 import theme from '../../styles/theme';
+import { useDataMeet } from '../../hook/useDataMeet';
 
 interface FormLoginProps {
-  nome: string;
+  name: string;
   codSala: string;
 }
 
 const Home: React.FC = () => {
   const { colors } = useTheme();
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const { handleNameRoom, handleNameUser } = useDataMeet();
+
+  const navigate = useNavigate();
 
   const {
     handleSubmit,
@@ -30,7 +36,9 @@ const Home: React.FC = () => {
   };
 
   const onSubmit: SubmitHandler<FormLoginProps> = data => {
-    //
+    handleNameRoom(data.codSala);
+    handleNameUser(data.name);
+    navigate('/meet');
   };
 
   return (
@@ -55,7 +63,7 @@ const Home: React.FC = () => {
                   type="text"
                   placeholder="Digite seu nome"
                   id="nome"
-                  {...register('nome')}
+                  {...register('name')}
                   label="Digite seu nome"
                 />
                 <Input

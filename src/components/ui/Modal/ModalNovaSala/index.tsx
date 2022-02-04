@@ -1,11 +1,13 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import Title from '../../../infra/typography/Title';
 import { ButtonCloseModal, Container } from '../styles';
 import { ContainerForm, ContentModal, InputModal } from './styles';
 
 import Button from '../../../infra/form/Button';
 import theme from '../../../../styles/theme';
+import { useDataMeet } from '../../../../hook/useDataMeet';
 
 interface ModalNovaSalaProps {
   isOpen: boolean;
@@ -23,8 +25,14 @@ const ModalNovaSala: React.FC<ModalNovaSalaProps> = ({
 }) => {
   const { register, handleSubmit } = useForm();
 
+  const { handleNameRoom, handleNameUser } = useDataMeet();
+
+  const navigate = useNavigate();
+
   const onSubmit: SubmitHandler<DataCriarNovaSala> = data => {
-    console.log(data);
+    handleNameRoom(data.codSala);
+    handleNameUser(data.user);
+    navigate('/meet');
   };
 
   return (

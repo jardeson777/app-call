@@ -9,9 +9,9 @@ import RemoveVideo from '../../../assets/icons/removeVideo.png';
 import theme from '../../../styles/theme';
 
 interface RowButtonsProps {
-  functionMute: () => void;
+  functionMute?: () => void;
   functionDisconnect: () => void;
-  functionRemoveVideo: () => void;
+  functionRemoveVideo?: () => void;
 }
 
 const RowButtons: React.FC<RowButtonsProps> = ({
@@ -21,15 +21,15 @@ const RowButtons: React.FC<RowButtonsProps> = ({
 }) => {
   return (
     <Container>
-      <Button icon color={theme.colors.green} onClick={functionMute}>
+      {/* <Button icon color={theme.colors.green} onClick={functionMute}>
         <img src={Mute} alt="mutar" />
-      </Button>
+      </Button> */}
       <Button icon color={theme.colors.danger} onClick={functionDisconnect}>
         <img src={Disconnect} alt="mutar" />
       </Button>
-      <Button icon color={theme.colors.green} onClick={functionRemoveVideo}>
+      {/* <Button icon color={theme.colors.green} onClick={functionRemoveVideo}>
         <img src={RemoveVideo} alt="mutar" />
-      </Button>
+      </Button> */}
     </Container>
   );
 };

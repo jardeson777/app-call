@@ -14,7 +14,7 @@ export const Content = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 `;
 
 export const RowVideo = styled.div`
@@ -28,9 +28,9 @@ export const RowVideo = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.primary};
     width: 100%;
     max-width: 500px;
-    min-width: 300px;
     border-radius: 8px;
     height: 100%;
+    max-height: 300px;
   }
 
   .videoOff {
