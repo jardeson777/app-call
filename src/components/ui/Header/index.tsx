@@ -12,6 +12,7 @@ interface HeaderProps {
   textHeader?: string;
   textHeaderDestaque?: string;
   colorButton: string;
+  functionHome?: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -19,11 +20,14 @@ const Header: React.FC<HeaderProps> = ({
   textButton,
   textHeader,
   textHeaderDestaque,
-  colorButton
+  colorButton,
+  functionHome
 }) => {
   return (
     <Container>
-      <img src={logo} alt="logo" />
+      <button type="button" onClick={functionHome} className="buttonHome">
+        <img src={logo} alt="logo" />
+      </button>
       {textHeader && (
         <Title
           text={textHeader}

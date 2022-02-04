@@ -11,4 +11,10 @@ export const Container = styled.header`
     max-width: 220px;
     margin-bottom: 10px;
   }
+
+  .buttonHome {
+    background: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
 `;
