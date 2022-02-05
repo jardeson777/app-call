@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+## 💻AppCall
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Sistema web de vídeo chamada usando conexão p2p.
 
-## Available Scripts
+<div>
+  <img width="500" src="https://user-images.githubusercontent.com/77817612/152624776-bc0b91ca-7505-4b2f-a7a8-6db84335c847.png"/>
+  <img width="500" src="https://user-images.githubusercontent.com/77817612/152624853-8b2f87a6-958b-4afb-8596-65714d7c0b6a.png"/>
+</div>
 
-In the project directory, you can run:
+<div>
+  <img width="500" src="https://user-images.githubusercontent.com/77817612/152625135-015cc08a-34aa-418c-ad61-feb871b31e1b.png"/>
+  <img width="500" src="https://user-images.githubusercontent.com/77817612/152625101-95604ad1-361c-4372-baa8-9a06ff8b84ac.png"/>
+</div>
 
-### `yarn start`
+* Lembrete: Aplicação está em desenvolvimento. Falta algumas funcionalidades, porém a vídeo chamada funciona.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Tecnologias utilizadas até o momento
+* React
+* Node para rodar o servidor. É a parte que conecta um peer aos demais peers que estão na chamada.
 
-### `yarn test`
+#### No React foi usado as seguintes tecnologias
+* Simple-peer
+* Socket.io-client
+* Commitzen
+* Uuid
+* Styled-components
+* React-hook-form
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### No Node está sendo usado as seguintes tecnologias
+* Express
+* Socket.io
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🖥Para rodar o projeto precisa de ter na máquina
+* Node 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀Passo a passo para rodar o projeto
+* Clone este repositório
+```
+https://github.com/jardeson777/app-call.git
+```
+* Clone o do backend também
+```
+https://github.com/jardeson777/serv-app-call.git
+```
 
-### `yarn eject`
+* O backend precisa rodar os comandos
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm run start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* No frontend precisa rodar os comandos
+```
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+npm run start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
