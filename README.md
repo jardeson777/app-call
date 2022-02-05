@@ -64,4 +64,4 @@ npm install
 npm run start
 ```
 
-##### Desenvolvido para um trabalho de Redes 2 para UFF. Grupo composto por Jardeson Nogueira, Daniel Neves e Victor Moreira
+##### Desenvolvido para um trabalho de Redes 2 na UFF. Grupo composto por Jardeson Nogueira, Daniel Neves e Victor Moreira
